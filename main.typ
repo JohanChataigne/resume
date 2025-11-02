@@ -2,13 +2,12 @@
 
 #show: resume.with(
   theme: (
-    margin: 26pt,
+    margin: 28pt,
     font: "Libre Baskerville",
     font-size: 8pt,
     font-secondary: "Roboto",
     font-tertiary: "Montserrat",
     text-color: rgb("#3f454d"),
-    gutter-size: 4em,
     main-width: 6fr,
     aside-width: 3fr,
     profile-picture-width: 70%,
@@ -17,135 +16,164 @@
   last-name: "Chataigner",
   profession: "Fullstack Software Engineer",
   bio: [
-    TODO
+    Curious full-stack engineer who enjoys learning new tools and tackling diverse challenges. Looking for an environment to apply and grow my skill set.
   ],
   profile-picture: {
-     box(image("./images/profile.jpg", fit: "cover"), inset: (top: -10%, bottom: -50%, left: -10%, right: -10%), clip: true, radius: 100%)
+     box(image("./images/profile.jpg", fit: "cover"), inset: (top: 0%, bottom: -10%, left: -10%, right: -10%), clip: true, radius: 100%)
   },
   aside: {
     section(
       theme: (
-        space-above: 0.4fr,
+        space-above: 10pt,
       ),
       "Contact",
       {
         set image(width: 8pt)
-        contact-entry(
-          email-icon,
-          link("mailto:jchataigner.pro@gmail.com", "jchataigner.pro@gmail.com"),
+        stack(
+            dir: ttb,
+            spacing: 6pt,
+            contact-entry(
+            email-icon,
+            link("mailto:jchataigner.pro@gmail.com", "jchataigner.pro@gmail.com"),
+            ),
+            line(stroke: 0.1pt, length: 100%),
+            contact-entry(
+              phone-icon,
+              link("tel:+33 7 86 38 35 69", "+33 7 86 38 35 69"),
+            ),
+            line(stroke: 0.1pt, length: 100%),
+            contact-entry(
+              github-icon,
+              link("https://github.com/JohanChataigne", "JohanChataigne"),
+            ),
+            line(stroke: 0.1pt, length: 100%),
+            contact-entry(
+              linkedin-icon,
+              link("https://www.linkedin.com/in/johan-chataigner-b9970a151", "Johan Chataigner"),
+            )
         )
-        line(stroke: 0.1pt, length: 100%)
-        contact-entry(
-          phone-icon,
-          link("tel:+33 7 86 38 35 69", "+33 7 86 38 35 69"),
-        )
-        line(stroke: 0.1pt, length: 100%)
-        contact-entry(
-          github-icon,
-          link("https://github.com/JohanChataigne", "JohanChataigne"),
-        )
-        line(stroke: 0.1pt, length: 100%)
-        contact-entry(
-          email-icon,
-          link("https://www.linkedin.com/in/johan-chataigner-b9970a151", "linkedin"),
-        )
+
       },
     )
 
     section(
         theme: (
-          space-above: 0.3fr,
+          space-above: 10pt,
         ),
       "Technical Skills",
       {
         set text(font: "Roboto", size: 8pt)
-        skill-entry(
-            "Kotlin",
-            5,
-            5,
+
+        subsection(
+            "Languages & Frameworks",
+            10pt,
+            5pt,
+            {
+                stack(
+                    dir: ttb,
+                    spacing: inter-soft-skill-spacing,
+                    skill-entry(
+                    "Kotlin",
+                    5,
+                    5,
+                    ),
+                    skill-entry(
+                    "Terraform",
+                    5,
+                    5,
+                    ),
+                    skill-entry(
+                    "Python",
+                    5,
+                    4,
+                    ),
+                    skill-entry(
+                    "Spring",
+                    5,
+                    4,
+                    ),
+                    skill-entry(
+                    "React & React Native",
+                    5,
+                    3,
+                    ),
+                    skill-entry(
+                    "Flutter",
+                    5,
+                    2,
+                    )
+                )
+
+            }
         )
-        skill-entry(
-            "Terraform",
-            5,
-            5,
-        )
-        skill-entry(
-            "Python",
-            5,
-            4,
-        )
-        skill-entry(
-            "Spring",
-            5,
-            4,
-        )
-        skill-entry(
-            "React & React Native",
-            5,
-            3,
-        )
-        skill-entry(
-            "Flutter",
-            5,
-            2,
+
+        subsection(
+            "Cloud providers",
+            10pt,
+            0pt,
+            {
+                stack(
+                    dir: ttb,
+                    spacing: inter-soft-skill-spacing,
+                    skill-entry(
+                    "AWS",
+                    5,
+                    4,
+                    ),
+                    skill-entry(
+                    "Azure",
+                    5,
+                    4,
+                    ),
+                    skill-entry(
+                    "Scaleway",
+                    5,
+                    2,
+                    ),
+                    skill-entry(
+                    "Oracle (OCI)",
+                    5,
+                    1,
+                    )
+                )
+            }
         )
       }
     )
 
     section(
         theme: (
-          space-above: 0.3fr,
+          space-above: 10pt,
         ),
-        "Cloud providers",
-        {
-            set text(font: "Roboto", size: 8pt)
-              skill-entry(
-                "AWS",
-                5,
-                4,
-              )
-              skill-entry(
-                "Azure",
-                5,
-                4,
-              )
-              skill-entry(
-                "Scaleway",
-                5,
-                2,
-              )
-              skill-entry(
-                "Oracle (OCI)",
-                5,
-                1,
-              )
-        }
-    )
-
-    section(
-        theme: (
-          space-above: 0.3fr,
-        ),
-      "Languages",
+      "Soft Skills",
       {
-        language-entry("French", "Native")
-        language-entry("English", "TOEIC - 975 pts")
-        language-entry("Spanish", "B2 level")
-      },
-    )
 
-    section(
-        theme: (
-          space-above: 0.3fr,
-        ),
-      "Hobbies",
-      {
-        set text(size: 7pt)
-        stack(
-          spacing: 8pt,
-          "Volleyball (niveau pré-national)",
-          "Sports in general",
-          "Video games",
+        subsection(
+            "Languages",
+            10pt,
+            5pt,
+            {
+                stack(
+                    spacing: inter-soft-skill-spacing,
+                    soft-skill-entry("French", level: "Native"),
+                    soft-skill-entry("English", level: "TOEIC 975 pts"),
+                    soft-skill-entry("Spanish", level: "B2 level"),
+                )
+            }
+        )
+
+        subsection(
+            "Hobbies",
+            10pt,
+            0pt,
+            {
+                stack(
+                  spacing: inter-soft-skill-spacing,
+                  soft-skill-entry("Competitive volleyball", level: "Pré-Nationale"),
+                  soft-skill-entry("Running"),
+                  soft-skill-entry("Video games"),
+                )
+            }
         )
       },
     )
@@ -155,7 +183,7 @@
 
 #section(
   theme: (
-    space-above: 0pt,
+    space-above: 30pt,
   ),
   "Work Experiences",
   {
@@ -168,53 +196,65 @@
       organization: "BeTomorrow",
       location: "Bordeaux, France",
       {
-        heading(level: 2, "Backend development & DevOps")
-
-        project(
-           "Refonte de l'application TBM",
-           [
-               Développement d'un backend for frontend et de l'infrastructure associée. Gestion de la connexion à de nombreuses dépendances externes, dans un contexte de charge importante sur l'infrastructure.
-           ],
-           technologies: ("Kotlin", "Spring", "Terraform", "Azure", "Redis"),
-        )
-        project(
-           "Développement et maintenance des applications Cleo et Physio.me (Biogen)",
-           [
-               Applications web et mobiles publiées dans de nombreux pays, avec des infrastructures Cloud dans plusieurs régions mondiales dans un contexte HDS.
-           ],
-           technologies: ("Kotlin", "Spring", "Terraform", "AWS", "React", "React Native"),
-        )
-
-        heading(level: 2, "Fullstack development for AI")
-
-        project(
-           "Assistant mobilité",
-           [
-                Développement d'un chatbot d'aide à la mobilité, exploitant les données publiques des réseaux de transports (GTFS, GTFS-RT).
-                Architecture multi-agents LLM avec du streaming en temps réel à une application mobile.
-           ],
-           technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "Azure", "SSE"),
+        subsection(
+            "Backend & Cloud Infrastructure",
+            15pt,
+            10pt,
+            {
+                stack(
+                    spacing: inter-project-spacing,
+                    project(
+                       "TBM Mobile App Revamp",
+                       [
+                           Developed a backend-for-frontend and its associated infrastructure. Managed connections to numerous external dependencies in a high-load infrastructure context.
+                       ],
+                       technologies: ("Kotlin", "Spring", "Terraform", "Azure", "Redis"),
+                    ),
+                    project(
+                       "Development and Maintenance of Cleo and Physio.me Applications (Biogen)",
+                       [
+                           Web and mobile applications deployed in multiple countries, with cloud infrastructures across several global regions, within an HDS-compliant environment.
+                       ],
+                       technologies: ("Kotlin", "Spring", "Terraform", "AWS", "React", "React Native"),
+                    )
+                )
+            }
         )
 
-        project(
-           "Assistant Plan Local d'Urbanisme",
-           [
-                Développement d'un agent LLM capable de répondre de manière simple et en citant ces sources à des questions sur le PLU de Bordeaux Métropole.
-                Agent avec des outils de recherche (RAG) et streaming en temps-réel à un site web.
-           ],
-           technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "Azure", "Scaleway", "SSE"),
+        subsection(
+            "Fullstack Development for Generative AI Solutions",
+            15pt,
+            0pt,
+            {
+                stack(
+                    spacing: inter-project-spacing,
+                    project(
+                       "Mobility Assistant",
+                       [
+                            Developed a mobility chatbot leveraging public transportation data (GTFS, GTFS-RT).
+                            Designed a multi-agent LLM architecture with real-time streaming to a mobile application.
+                       ],
+                       technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "Azure", "SSE"),
+                    ),
+                    project(
+                       "Local Urban development Plan Assistant (PLU)",
+                       [
+                            Built an LLM-powered agent capable of answering questions about the Bordeaux Metropole urban plan (PLU) with clear, sourced responses.
+                            Implemented search (RAG) tools and real-time streaming to a web interface.
+                       ],
+                       technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "Azure", "Scaleway", "SSE"),
+                    ),
+                    project(
+                       "Tailored Travel Experience Assistant",
+                       [
+                            Developed an LLM agent for creating personalized travel experiences in the luxury hospitality sector.
+                            Agent with integrated tools for searching experiences and availability, with real-time streaming to web and mobile applications.
+                       ],
+                       technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "AWS", "OpenSearch", "SSE"),
+                    )
+                )
+            }
         )
-
-        project(
-           "Assistant de création d'expériences de voyage sur mesure",
-           [
-                Développement d'un agent LLM de création d'expériences de voyage dans le milieu de l'hôtellerie de luxe.
-                Agent avec des outils de recherche d'expériences et disponibilités et streaming en temps-réel à une application web et mobile.
-           ],
-           technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "AWS", "OpenSearch", "SSE"),
-        )
-
-
 
         // Quid de César et Saretec ML ?
       },
@@ -228,21 +268,31 @@
         organization: "BeTomorrow",
         location: "Bordeaux, France",
         {
-            project(
-               "Détection automatique de l'apnée du sommeil",
-               [
-                   Développement fullstack d'une application mobile exploitant des algorithmes de Machine Learning pour determiner si une personne est atteinte d'apnée du sommeil, à partir d'une photo du visage.
-               ],
-               technologies: ("Python", "Tensorflow", "Scikit Learn", "React Native", "AWS"),
-            )
-
-            project(
-                "Recommendation de contenu par IA",
-                [
-                    Développement fullstack d'une application mobile permettant d'intéragir avec du contenu vidéo, puis d'en recommander en se basant sur ces intéractions.
-                    Rédaction d'une suite d'articles sur le sujet, disponibles sur ce #link("https://medium.com/betomorrow")[Médium].
-                ],
-                technologies: ("Python", "AWS", "Flutter")
+            stack(
+                dir: ttb,
+                spacing: inter-project-spacing,
+                project(
+                   "Automatic Sleep Apnea Detection",
+                   [
+                       Full-stack development of a mobile application using machine learning algorithms to determine whether a person suffers from sleep apnea based on a facial photo.
+                   ],
+                   technologies: ("Python", "Tensorflow", "Scikit Learn", "React Native", "AWS"),
+                ),
+                project(
+                    "AI-Powered Content Recommendation",
+                    [
+                        Full-stack development of a mobile application enabling users to interact with video content and receive personalized recommendations based on their interactions.
+                        Authored a series of articles on the topic, available on #link("https://medium.com/betomorrow")[Médium].
+                    ],
+                    technologies: ("Python", "AWS", "Flutter")
+                ),
+                project(
+                    "Mobile Outdoor Augmented-Reality",
+                    [
+                        Developed a native Android application to experiment with live tracking and labeling of outdoor structures (buildings, trees, etc.) through the device camera, aimed at enhancing tourism experiences.
+                    ],
+                    technologies: ("Python", "Kotlin", "Android")
+                )
             )
         }
     )
@@ -264,7 +314,7 @@
       [In-depth maths, physics, chemistry, etc.],
     ),
     education-entry(
-      title: "Master Degree in Computer Science",
+      title: "Ingénieur en informatique",
       institution: "ENSEIRB-MATMECA, Bordeaux, France",
       timeframe: "2018 - 2021",
       [Specialized in Artificial Intelligence.],

@@ -5,8 +5,8 @@
   font-secondary: "Roboto",
   font-tertiary: "Montserrat",
   text-color: rgb("#3f454d"),
-  color-primary: rgb("#9bc999"),
-  color-secondary: olive,
+  color-primary: rgb("#000000"),
+  color-secondary: rgb("#9db6cc"),
   gutter-size: 4em,
   main-width: 6fr,
   aside-width: 3fr,
@@ -69,12 +69,12 @@
       {
         {
           show heading: set block(above: 0pt, below: 0pt)
-          show heading: set text(size: 12pt, weight: "regular", font: th("font"), fill: th("text-color"))
+          show heading: set text(size: 16pt, weight: "regular", font: th("font"), fill: th("text-color"))
           heading(level: 2, first-name)
         }
         {
           show heading: set block(above: 3pt, below: 0pt)
-          show heading: set text(size: 26pt, weight: "regular", font: th("font"), fill: th("text-color"))
+          show heading: set text(size: 24pt, weight: "regular", font: th("font"), fill: th("text-color"))
 
           heading(level: 1, last-name)
         }
@@ -87,15 +87,15 @@
         if profile-picture != none {
           set align(center)
           set image(width: th("profile-picture-width"))
-          v(0.2fr)
+          v(30pt)
           profile-picture
+          v(10pt)
         } else {
-          v(1fr)
+          v(10pt)
         }
 
 
         set text(weight: "light", style: "italic", hyphenate: true)
-        set par(leading: 1.0em)
         bio
       }
 
@@ -118,6 +118,9 @@
 ) = {
   show heading.where(level: 1): set align(theme.align-title) if "align-title" in theme
   show heading.where(level: 1): set align(end) if not "align-title" in theme
+  show heading.where(level: 1): set text(fill: default-theme.color-primary) if "color-primary" in default-theme
+  show heading.where(level: 1): set text(size: 10pt)
+
 
   if "space-above" not in theme {
     v(1fr)
@@ -126,12 +129,32 @@
   }
 
 
-  heading(level: 1, upper(title))
+  heading(level: 1, text(upper(title)))
   {
     set block(above: 2pt, below: 14pt)
-    line(stroke: 1pt, length: 100%)
+    if "color-primary" in default-theme {
+        line(stroke: 1pt + default-theme.color-primary, length: 100%)
+    } else {
+        line(stroke: 1pt, length: 100%)
+    }
   }
   body
+}
+
+#let subsection(
+    theme: (),
+    title,
+    spacing,
+    below,
+    body,
+) = {
+    stack(
+        dir: ttb,
+        spacing: spacing,
+        heading(level: 2, title),
+        pad(left: 1em, body)
+    )
+    v(below)
 }
 
 #let contact-entry(
@@ -144,37 +167,30 @@
   set text(font: default-theme.font-secondary) if "font-secondary" not in theme
   set text(size: theme.font-size) if "font-size" in theme
 
-  grid(
-    {
-      context {
-        set align(center) if not "align-gutter" in theme
-        set align(theme.align-gutter) if "align-gutter" in theme
-        gutter
-      }
-    },
-    {
-      right
-    }
+  stack(
+    dir: ltr,
+    spacing: 10pt,
+    gutter,
+    right
   )
 }
 
-#let language-entry(
+#let inter-soft-skill-spacing = 6pt
+
+#let soft-skill-entry(
+  skill,
   theme: (),
-  language,
-  level,
+  level: "",
 ) = {
   set text(font: theme.font) if "font-secondary" in theme
   set text(font: default-theme.font-secondary) if "font-secondary" not in theme
   set text(size: theme.font-size) if "font-size" in theme
 
-  stack(
-    dir: ltr,
-    language,
-    {
-      set align(end)
-      level
-    },
-  )
+    if level != "" {
+        skill + " - " + text(style: "italic", level)
+    } else {
+        skill
+    }
 }
 
 #let work-entry(
@@ -226,7 +242,6 @@
     line(stroke: 0.1pt, length: 100%)
   }
   context {
-    set text(fill: text.fill.lighten(30%))
     set par(leading: 1em)
     body
   }
@@ -238,7 +253,7 @@
 ) = {
 
     set box(fill: theme.tag-fill) if "tag-fill" in theme
-    set box(fill: default-theme.color-primary) if "tag-fill" not in theme
+    set box(fill: default-theme.color-secondary) if "tag-fill" not in theme
 
     set box(stroke: 0.5pt + theme.tag-stroke) if "tag-stroke" in theme
     set box(stroke: 0.5pt + default-theme.color-secondary) if "tag-stroke" not in theme
@@ -256,6 +271,7 @@
     )
 }
 
+#let inter-project-spacing = 15pt
 
 #let project(
   theme: (),
@@ -263,16 +279,24 @@
   description,
   technologies: (),
 ) = {
+
     stack(
-        text(weight: "bold", title),
+        context {
+            set text(fill: text.fill.lighten(20%))
+            text(weight: "bold", title)
+        },
         v(5pt),
         stack(
             dir: ltr,
             spacing: 3pt,
             ..technologies.map(t => tag(t))
         ),
-        v(10pt),
-        par(description, justify: true, leading: 0.6em)
+        v(5pt),
+        context {
+            set text(fill: text.fill.lighten(30%))
+            par(description, justify: true, leading: 0.6em)
+        }
+
     )
 }
 
@@ -283,18 +307,22 @@
 ) = {
 
     set rect(radius: theme.radius) if "radius" in theme
+    set rect(radius: 10%) if "radius" not in theme
 
     set rect(stroke: 1pt + theme.stroke) if "stroke" in theme
     set rect(stroke: 1pt + default-theme.color-secondary) if "stroke" not in theme
 
     set rect(fill: theme.fill) if "fill" in theme
-    set rect(fill: default-theme.color-primary) if "fill" not in theme
+    set rect(fill: default-theme.color-secondary) if "fill" not in theme
+
+    let rect-width = 10pt
+    let rect-height = 5pt
 
     stack(
         dir: ltr,
         spacing: 2pt,
-        ..range(level).map(_ =>  rect(height: 6pt, width: 10pt)),
-        ..range(scale - level).map(_ =>  rect(fill: none, height: 6pt, width: 10pt)),
+        ..range(level).map(_ =>  rect(height: rect-height, width: rect-width)),
+        ..range(scale - level).map(_ =>  rect(fill: none, height: rect-height, width: rect-width)),
     )
 }
 
@@ -307,7 +335,6 @@
 
     stack(
         dir: ltr,
-        spacing: 0pt,
         title,
         align(end, skill-level(theme: theme, scale, level))
     )
@@ -362,3 +389,4 @@
 #let github-icon = image("images/github-brands.svg")
 #let phone-icon = image("images/phone-solid.svg")
 #let email-icon = image("images/envelope-solid.svg")
+#let linkedin-icon = image("images/linkedin.svg")
