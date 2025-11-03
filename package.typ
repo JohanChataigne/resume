@@ -1,20 +1,25 @@
 #let default-theme = (
-  margin: 26pt,
-  font: "Libre Baskerville",
+  margin: 28pt,
+  font: "Optima",
   font-size: 8pt,
-  font-secondary: "Roboto",
-  font-tertiary: "Montserrat",
+  font-secondary: "Optima",
+  font-tertiary: "Libre Baskerville",
   text-color: rgb("#3f454d"),
   color-primary: rgb("#000000"),
-  color-secondary: rgb("#9db6cc"),
+  color-secondary: rgb("#475d6a"),
   gutter-size: 4em,
   main-width: 6fr,
   aside-width: 3fr,
-  profile-picture-width: 55%,
+  profile-picture-width: 70%,
   tag-font-color: white,
-  tag-font-size: 6pt,
+  tag-font-size: 5pt,
 )
 
+#let github-icon = image("images/github-brands.svg")
+#let phone-icon = image("images/phone-solid.svg")
+#let email-icon = image("images/envelope-solid.svg")
+#let linkedin-icon = image("images/linkedin.svg")
+#let location-icon = image("images/location.svg")
 
 #let resume(
   first-name: "",
@@ -69,12 +74,12 @@
       {
         {
           show heading: set block(above: 0pt, below: 0pt)
-          show heading: set text(size: 16pt, weight: "regular", font: th("font"), fill: th("text-color"))
+          show heading: set text(size: 16pt, weight: "regular", font: th("font-tertiary"), fill: th("text-color"))
           heading(level: 2, first-name)
         }
         {
           show heading: set block(above: 3pt, below: 0pt)
-          show heading: set text(size: 24pt, weight: "regular", font: th("font"), fill: th("text-color"))
+          show heading: set text(size: 24pt, weight: "regular", font: th("font-tertiary"), fill: th("text-color"))
 
           heading(level: 1, last-name)
         }
@@ -94,9 +99,11 @@
           v(10pt)
         }
 
-
-        set text(weight: "light", style: "italic", hyphenate: true)
-        bio
+        {
+            set text(font: default-theme.font) if "font" in default-theme
+            set text(weight: "light", style: "italic", hyphenate: true)
+            bio
+        }
       }
 
       aside
@@ -119,6 +126,7 @@
   show heading.where(level: 1): set align(theme.align-title) if "align-title" in theme
   show heading.where(level: 1): set align(end) if not "align-title" in theme
   show heading.where(level: 1): set text(fill: default-theme.color-primary) if "color-primary" in default-theme
+  show heading.where(level: 1): set text(font: default-theme.font-tertiary) if "font-tertiary" in default-theme
   show heading.where(level: 1): set text(size: 10pt)
 
 
@@ -151,7 +159,12 @@
     stack(
         dir: ttb,
         spacing: spacing,
-        heading(level: 2, title),
+        {
+            show heading.where(level: 2): set text(font: default-theme.font-tertiary) if "font-tertiary" in default-theme
+            show heading.where(level: 2): set text(size: 8pt)
+
+            heading(level: 2,text(title))
+        },
         pad(left: 1em, body)
     )
     v(below)
@@ -223,7 +236,7 @@
         },
         {
           {
-            set text(weight: "bold")
+            set text(font: default-theme.font-tertiary, weight: "bold", size: 7pt)
             upper(title)
           }
           " – "
@@ -264,10 +277,12 @@
     set text(size: theme.tag-font-size) if "tag-font-size" in theme
     set text(size: default-theme.tag-font-size) if "tag-font-size" not in theme
 
+    set text(font: default-theme.font-tertiary) if "font-tertiary" in default-theme
+
     box(
         radius: 50%,
         inset: (x: 4pt, y: 1.5pt),
-        label,
+        text(label, weight: "bold"),
     )
 }
 
@@ -279,6 +294,8 @@
   description,
   technologies: (),
 ) = {
+
+    set text(font: default-theme.font) if "font" in default-theme
 
     stack(
         context {
@@ -298,6 +315,37 @@
         }
 
     )
+}
+
+#let progressbar(
+  theme: (),
+  progress: 0%,
+) = {
+
+  set rect(fill: theme.color) if "color" in theme
+  set rect(fill: default-theme.color-secondary) if "color-secondary" in default-theme
+  set rect(radius: 50%)
+
+  let progress-bar-height = 3pt
+
+  context {
+    let light-accent = rect.fill.lighten(80%)
+
+    rect(
+      height: progress-bar-height,
+      width: 100%,
+      inset: 0pt,
+      fill: light-accent,
+      [
+        #place(
+          rect(
+            width: progress,
+            stroke: 0pt,
+          )
+        )
+      ]
+    )
+  }
 }
 
 #let skill-level(
@@ -329,15 +377,11 @@
 #let skill-entry(
     theme: (),
     title,
-    scale,
-    level,
+    progress,
 ) = {
 
-    stack(
-        dir: ltr,
-        title,
-        align(end, skill-level(theme: theme, scale, level))
-    )
+    set text(font: default-theme.font) if "font" in default-theme
+    title + h(1fr) + box(progressbar(theme: theme, progress: progress), width: 40%)
 }
 
 #let education-entry(
@@ -374,7 +418,7 @@
     stack(
       spacing: 8pt,
       {
-        set text(font: theme.font) if "font" in theme
+        set text(font: default-theme.font) if "font" in default-theme
         body
       },
       {
@@ -386,7 +430,3 @@
   }
 }
 
-#let github-icon = image("images/github-brands.svg")
-#let phone-icon = image("images/phone-solid.svg")
-#let email-icon = image("images/envelope-solid.svg")
-#let linkedin-icon = image("images/linkedin.svg")

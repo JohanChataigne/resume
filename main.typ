@@ -1,17 +1,6 @@
 #import "package.typ": *
 
 #show: resume.with(
-  theme: (
-    margin: 28pt,
-    font: "Libre Baskerville",
-    font-size: 8pt,
-    font-secondary: "Roboto",
-    font-tertiary: "Montserrat",
-    text-color: rgb("#3f454d"),
-    main-width: 6fr,
-    aside-width: 3fr,
-    profile-picture-width: 70%,
-  ),
   first-name: "Johan",
   last-name: "Chataigner",
   profession: "Fullstack Software Engineer",
@@ -50,9 +39,13 @@
             contact-entry(
               linkedin-icon,
               link("https://www.linkedin.com/in/johan-chataigner-b9970a151", "Johan Chataigner"),
+            ),
+            line(stroke: 0.1pt, length: 100%),
+            contact-entry(
+                location-icon,
+                "3 chemin de Jean d'Arsac,\nLe Taillan-Médoc (33320)",
             )
         )
-
       },
     )
 
@@ -62,8 +55,6 @@
         ),
       "Technical Skills",
       {
-        set text(font: "Roboto", size: 8pt)
-
         subsection(
             "Languages & Frameworks",
             10pt,
@@ -74,33 +65,23 @@
                     spacing: inter-soft-skill-spacing,
                     skill-entry(
                     "Kotlin",
-                    5,
-                    5,
+                    90%,
                     ),
                     skill-entry(
                     "Terraform",
-                    5,
-                    5,
+                    90%,
                     ),
                     skill-entry(
                     "Python",
-                    5,
-                    4,
+                    80%,
                     ),
                     skill-entry(
                     "Spring",
-                    5,
-                    4,
+                    80%,
                     ),
                     skill-entry(
                     "React & React Native",
-                    5,
-                    3,
-                    ),
-                    skill-entry(
-                    "Flutter",
-                    5,
-                    2,
+                    40%,
                     )
                 )
 
@@ -117,23 +98,19 @@
                     spacing: inter-soft-skill-spacing,
                     skill-entry(
                     "AWS",
-                    5,
-                    4,
+                    80%,
                     ),
                     skill-entry(
                     "Azure",
-                    5,
-                    4,
+                    75%,
                     ),
                     skill-entry(
                     "Scaleway",
-                    5,
-                    2,
+                    50%,
                     ),
                     skill-entry(
                     "Oracle (OCI)",
-                    5,
-                    1,
+                    50%,
                     )
                 )
             }
@@ -196,67 +173,47 @@
       organization: "BeTomorrow",
       location: "Bordeaux, France",
       {
-        subsection(
-            "Backend & Cloud Infrastructure",
-            15pt,
-            10pt,
-            {
-                stack(
-                    spacing: inter-project-spacing,
-                    project(
-                       "TBM Mobile App Revamp",
-                       [
-                           Developed a backend-for-frontend and its associated infrastructure. Managed connections to numerous external dependencies in a high-load infrastructure context.
-                       ],
-                       technologies: ("Kotlin", "Spring", "Terraform", "Azure", "Redis"),
-                    ),
-                    project(
-                       "Development and Maintenance of Cleo and Physio.me Applications (Biogen)",
-                       [
-                           Web and mobile applications deployed in multiple countries, with cloud infrastructures across several global regions, within an HDS-compliant environment.
-                       ],
-                       technologies: ("Kotlin", "Spring", "Terraform", "AWS", "React", "React Native"),
-                    )
-                )
-            }
+        stack(
+            spacing: inter-project-spacing,
+            project(
+               "TBM Mobile App Revamp",
+               [
+                   Developed a backend-for-frontend and its associated infrastructure. Managed connections to numerous external dependencies in a high-load infrastructure context.
+               ],
+               technologies: ("Kotlin", "Spring", "Terraform", "Azure", "Redis"),
+            ),
+            project(
+               "Development and Maintenance of Cleo and Physio.me Applications (Biogen)",
+               [
+                   Web and mobile applications deployed in multiple countries, with cloud infrastructures across several global regions, within an HDS-compliant environment.
+               ],
+               technologies: ("Kotlin", "Spring", "Terraform", "AWS", "React", "React Native"),
+            ),
+            project(
+               "Mobility Assistant",
+               [
+                    Developed a mobility chatbot leveraging public transportation data (GTFS, GTFS-RT).
+                    Designed a multi-agent LLM architecture with real-time streaming to a mobile application.
+               ],
+               technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "Azure", "SSE"),
+            ),
+            project(
+               "Local Urban development Plan Assistant (PLU)",
+               [
+                    Built an LLM-powered agent capable of answering questions about the Bordeaux Metropole urban plan (PLU) with clear, sourced responses.
+                    Implemented search (RAG) tools and real-time streaming to a web interface.
+               ],
+               technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "Azure", "Scaleway", "SSE"),
+            ),
+            project(
+               "Tailored Travel Experience Assistant",
+               [
+                    Developed an LLM agent for creating personalized travel experiences in the luxury hospitality sector.
+                    Agent with integrated tools for searching experiences and availability, with real-time streaming to web and mobile applications.
+               ],
+               technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "AWS", "OpenSearch", "SSE"),
+            ),
         )
-
-        subsection(
-            "Fullstack Development for Generative AI Solutions",
-            15pt,
-            0pt,
-            {
-                stack(
-                    spacing: inter-project-spacing,
-                    project(
-                       "Mobility Assistant",
-                       [
-                            Developed a mobility chatbot leveraging public transportation data (GTFS, GTFS-RT).
-                            Designed a multi-agent LLM architecture with real-time streaming to a mobile application.
-                       ],
-                       technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "Azure", "SSE"),
-                    ),
-                    project(
-                       "Local Urban development Plan Assistant (PLU)",
-                       [
-                            Built an LLM-powered agent capable of answering questions about the Bordeaux Metropole urban plan (PLU) with clear, sourced responses.
-                            Implemented search (RAG) tools and real-time streaming to a web interface.
-                       ],
-                       technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "Azure", "Scaleway", "SSE"),
-                    ),
-                    project(
-                       "Tailored Travel Experience Assistant",
-                       [
-                            Developed an LLM agent for creating personalized travel experiences in the luxury hospitality sector.
-                            Agent with integrated tools for searching experiences and availability, with real-time streaming to web and mobile applications.
-                       ],
-                       technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "AWS", "OpenSearch", "SSE"),
-                    )
-                )
-            }
-        )
-
-        // Quid de César et Saretec ML ?
       },
     )
     work-entry(
@@ -309,7 +266,7 @@
     column-gutter: default-theme.margin,
     education-entry(
       title: "Prep school",
-      institution: "La Prépa de INP, Bordeaux, France",
+      institution: "La Prépa des INP, Bordeaux, France",
       timeframe: "2016 - 2018",
       [In-depth maths, physics, chemistry, etc.],
     ),
