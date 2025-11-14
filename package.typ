@@ -286,7 +286,7 @@
     )
 }
 
-#let inter-project-spacing = 15pt
+#let inter-project-spacing = 12pt
 
 #let project(
   theme: (),

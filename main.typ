@@ -161,6 +161,37 @@
         stack(
             spacing: inter-project-spacing,
             project(
+               "Mobility assistant",
+               [
+                    Developed a mobility chatbot leveraging public transportation data (GTFS, GTFS-RT).
+                    Designed a multi-agent LLM architecture with real-time streaming to a mobile application.
+               ],
+               technologies: ("Python", "uv", "FastAPI", "LangGraph", "Terraform", "Azure", "SSE"),
+            ),
+            project(
+               "Local Urban development Plan assistant (PLU)",
+               [
+                    Built an LLM-powered agent capable of answering questions about the Bordeaux Metropole urban plan (PLU) with clear, sourced responses.
+                    Implemented search (RAG) tools and real-time streaming to a web interface.
+               ],
+               technologies: ("Python", "uv", "FastAPI", "LangGraph", "Terraform", "Azure", "Scaleway", "SSE"),
+            ),
+            project(
+               "Tailored travel experience assistant",
+               [
+                    Developed an LLM agent for creating personalized travel experiences in the luxury hospitality sector.
+                    Agent with integrated tools for searching experiences and availability, with real-time streaming to web and mobile applications.
+               ],
+               technologies: ("Python", "uv", "FastAPI", "LangGraph", "Terraform", "AWS", "OpenSearch", "SSE"),
+            ),
+            project(
+                "AI-Powered insurance claim categorization pipeline",
+                [
+                    Built a pipeline to automate the categorization and analysis of insurance claim emails. Designed a multi-node workflow to extract key claim details and generate actionable recommendations for insurance agents using LLM-driven decision-making.
+                ],
+                technologies: ("Python", "uv", "FastAPI", "LangGraph", "Terraform", "Azure"),
+            ),
+            project(
                "TBM Mobile App Revamp",
                [
                    Developed a backend-for-frontend and its associated infrastructure. Managed connections to numerous external dependencies in a high-load infrastructure context.
@@ -174,36 +205,12 @@
                ],
                technologies: ("Kotlin", "Spring", "Terraform", "AWS", "React", "React Native"),
             ),
-            project(
-               "Mobility Assistant",
-               [
-                    Developed a mobility chatbot leveraging public transportation data (GTFS, GTFS-RT).
-                    Designed a multi-agent LLM architecture with real-time streaming to a mobile application.
-               ],
-               technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "Azure", "SSE"),
-            ),
-            project(
-               "Local Urban development Plan Assistant (PLU)",
-               [
-                    Built an LLM-powered agent capable of answering questions about the Bordeaux Metropole urban plan (PLU) with clear, sourced responses.
-                    Implemented search (RAG) tools and real-time streaming to a web interface.
-               ],
-               technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "Azure", "Scaleway", "SSE"),
-            ),
-            project(
-               "Tailored Travel Experience Assistant",
-               [
-                    Developed an LLM agent for creating personalized travel experiences in the luxury hospitality sector.
-                    Agent with integrated tools for searching experiences and availability, with real-time streaming to web and mobile applications.
-               ],
-               technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "AWS", "OpenSearch", "SSE"),
-            ),
         )
       },
     )
     work-entry(
         theme: (
-            space-above: 20pt,
+            space-above: 10pt,
         ),
         timeframe: "February 2021 - August 2021",
         title: "Artificial Intelligence Intern",
@@ -243,7 +250,7 @@
 
 #section(
   theme: (
-    space-above: 20pt,
+    space-above: 10pt,
   ),
   "Education",
   grid(
