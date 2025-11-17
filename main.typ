@@ -73,45 +73,30 @@
                     ),
                     skill-entry(
                     "Python",
-                    80%,
+                    85%,
                     ),
                     skill-entry(
                     "Spring",
                     80%,
                     ),
                     skill-entry(
-                    "React & React Native",
-                    40%,
-                    )
+                    "TypeScript",
+                    60%,
+                    ),
                 )
-
             }
         )
 
         subsection(
-            "Cloud providers",
+            "Cloud certifications",
             10pt,
             0pt,
             {
                 stack(
                     dir: ttb,
                     spacing: inter-soft-skill-spacing,
-                    skill-entry(
-                    "AWS",
-                    80%,
-                    ),
-                    skill-entry(
-                    "Azure",
-                    75%,
-                    ),
-                    skill-entry(
-                    "Scaleway",
-                    50%,
-                    ),
-                    skill-entry(
-                    "Oracle (OCI)",
-                    50%,
-                    )
+                    "Microsoft Azure Fundamentals",
+                    "OCI Certified AI Foundations Associate"
                 )
             }
         )

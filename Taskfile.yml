@@ -1,0 +1,8 @@
+version: 3
+
+tasks:
+  compile:
+    requires:
+      vars:
+        - FILENAME
+    cmd: typst compile main.typ {{.FILENAME}}
