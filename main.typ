@@ -95,8 +95,8 @@
                 stack(
                     dir: ttb,
                     spacing: inter-soft-skill-spacing,
-                    "Microsoft Azure Fundamentals",
-                    "OCI Certified AI Foundations Associate"
+                    link("https://learn.microsoft.com/api/credentials/share/en-us/JohanChataigner-4686/68E0B40A282F5A00?sharingId=34DC214C8A2B6B04")[Microsoft Azure Fundamentals],
+                    link("https://catalog-education.oracle.com/pls/certview/sharebadge?id=3DD9CEF71434FDB0D50EB397B2E04A228CA45A834A4E5005511CC1455997FDE8")[OCI Certified AI Foundations Associate],
                 )
             }
         )
