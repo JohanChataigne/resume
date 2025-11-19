@@ -20,6 +20,7 @@
 #let email-icon = image("images/envelope-solid.svg")
 #let linkedin-icon = image("images/linkedin.svg")
 #let location-icon = image("images/location.svg")
+#let certified-icon = image("images/certificate-badge.svg")
 
 #let resume(
   first-name: "",
