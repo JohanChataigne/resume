@@ -5,4 +5,4 @@ tasks:
     requires:
       vars:
         - FILENAME
-    cmd: typst compile main.typ {{.FILENAME}}
+    cmd: typst compile main.typ "{{.FILENAME}}"
