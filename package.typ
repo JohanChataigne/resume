@@ -1,9 +1,9 @@
 #let default-theme = (
   margin: 28pt,
-  font: "Optima",
+  font: "Arial",
   font-size: 8pt,
-  font-secondary: "Optima",
-  font-tertiary: "Libre Baskerville",
+  font-secondary: "Arial",
+  font-tertiary: "Arial",
   text-color: rgb("#3f454d"),
   color-primary: rgb("#000000"),
   color-secondary: rgb("#475d6a"),
@@ -12,7 +12,7 @@
   aside-width: 3fr,
   profile-picture-width: 70%,
   tag-font-color: white,
-  tag-font-size: 5pt,
+  tag-font-size: 6pt,
 )
 
 #let github-icon = image("images/github-brands.svg")
@@ -237,7 +237,7 @@
         },
         {
           {
-            set text(font: default-theme.font-tertiary, weight: "bold", size: 7pt)
+            set text(font: default-theme.font-tertiary, weight: "bold", size: 8pt)
             upper(title)
           }
           " – "
@@ -283,7 +283,7 @@
     box(
         radius: 50%,
         inset: (x: 4pt, y: 1.5pt),
-        text(label, weight: "bold"),
+        text(label),
     )
 }
 

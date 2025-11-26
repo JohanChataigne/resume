@@ -5,7 +5,8 @@
   last-name: "Chataigner",
   profession: "Fullstack Software Engineer",
   bio: [
-    Curious full-stack engineer who enjoys learning new tools and tackling diverse challenges. Looking for an environment to apply and grow my skill set.
+    Fullstack Software Engineer with a core focus on Backend Architecture and Cloud Infrastructure.
+    Specialized in Kotlin Spring and Python FastAPI for high-availability distributed systems, with expertise in building production-grade Generative AI solutions.
   ],
   profile-picture: {
      box(image("./images/profile.jpg", fit: "cover"), inset: (top: 0%, bottom: -10%, left: -10%, right: -10%), clip: true, radius: 100%)
@@ -174,14 +175,14 @@
             project(
                "TBM Mobile App Revamp",
                [
-                   Developed a backend-for-frontend and its associated infrastructure. Managed connections to numerous external dependencies in a high-load infrastructure context.
+                   Developed a backend-for-frontend and its associated infrastructure for an app with 10k+ monthly active users. Integrated and managed connections to 15+ external dependencies in a high-load infrastructure context.
                ],
                technologies: ("Kotlin", "Spring", "Terraform", "Azure", "Redis"),
             ),
             project(
                "Development and Maintenance of Cleo and Physio.me Applications (Biogen)",
                [
-                   Web and mobile applications deployed in multiple countries, with cloud infrastructures across several global regions, within an HDS-compliant environment.
+                   Web and mobile applications deployed in 10+ countries, with cloud infrastructures across multiple AWS regions, within an HDS-compliant environment.
                ],
                technologies: ("Kotlin", "Spring", "Terraform", "AWS", "React", "React Native"),
             ),
@@ -197,7 +198,7 @@
                "Local Urban development Plan Assistant (PLU)",
                [
                     Built an LLM-powered agent capable of answering questions about the Bordeaux Metropole urban plan (PLU) with clear, sourced responses.
-                    Implemented search (RAG) tools and real-time streaming to a web interface.
+                    Implemented RAG pipeline, to provide grounded answers, and real-time streaming to a web interface.
                ],
                technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "Azure", "Scaleway", "SSE"),
             ),
