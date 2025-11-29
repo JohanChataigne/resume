@@ -3,10 +3,9 @@
 #show: resume.with(
   first-name: "Johan",
   last-name: "Chataigner",
-  profession: "Fullstack Software Engineer",
+  profession: "Ingénieur Logiciel Fullstack",
   bio: [
-    Fullstack Software Engineer with a core focus on Backend Architecture and Cloud Infrastructure.
-    Specialized in Kotlin Spring and Python FastAPI for high-availability distributed systems, with expertise in building production-grade Generative AI solutions.
+    Ingénieur Logiciel Fullstack spécialisé dans l'architecture Backend et les infrastructures Cloud. Mon expertise se concentre sur la conception de systèmes distribués à haute disponibilité (Kotlin Spring et Python FastAPI), et je possède une forte compétence dans la création et le déploiement de solutions d'Intelligence Artificielle Générative en production.
   ],
   profile-picture: {
      box(image("./images/profile.jpg", fit: "cover"), inset: (top: 0%, bottom: -10%, left: -10%, right: -10%), clip: true, radius: 100%)
@@ -16,7 +15,7 @@
       theme: (
         space-above: 10pt,
       ),
-      "Contact",
+      "Coordonnées",
       {
         set image(width: 8pt)
         stack(
@@ -51,7 +50,7 @@
         theme: (
           space-above: 10pt,
         ),
-      "Technical Skills",
+      "Compétences techniques",
       {
             stack(
                 dir: ttb,
@@ -61,7 +60,7 @@
                     keywords: ("Kotlin Spring", "Python FastAPI"),
                 ),
                 skill-entry(
-                    "Cloud Platforms",
+                    "Plateformes Cloud",
                     keywords: ("Azure", "AWS", "Scaleway"),
                 ),
                 skill-entry(
@@ -110,13 +109,13 @@
         theme: (
           space-above: 10pt,
         ),
-      "Languages",
+      "Langues",
       {
             stack(
                 spacing: inter-skill-spacing,
-                soft-skill-entry("French", level: "Native"),
-                soft-skill-entry("English", level: "TOEIC 975 pts"),
-                soft-skill-entry("Spanish", level: "B2 level"),
+                soft-skill-entry("Français", level: "Natif"),
+                soft-skill-entry("Anglais", level: "TOEIC 975 pts"),
+                soft-skill-entry("Espagnol", level: "Niveau B2"),
             )
         }
     )
@@ -125,13 +124,13 @@
         theme: (
           space-above: 10pt,
         ),
-      "Hobbies",
+      "Loisirs",
       {
             stack(
                 spacing: inter-skill-spacing,
-                soft-skill-entry("Competitive volleyball", level: "Pré-Nationale"),
+                soft-skill-entry("Volleyball en compétition", level: "Pré-Nationale"),
                 soft-skill-entry("Running"),
-                soft-skill-entry("Video games"),
+                soft-skill-entry("Jeux vidéo"),
             )
         }
     )
@@ -143,54 +142,52 @@
   theme: (
     space-above: 30pt,
   ),
-  "Work Experiences",
+  "Expériences Professionnelles",
   {
     work-entry(
       theme: (
         space-above: 0pt,
       ),
-      timeframe: "September 2021 - Today",
-      title: "Fullstack Software Engineer",
+      timeframe: "Septembre 2021 - Aujourd'hui",
+      title: "Ingénieur Logiciel Fullstack",
       organization: "BeTomorrow",
       location: "Bordeaux, France",
       {
         stack(
             spacing: inter-project-spacing,
             project(
-               "TBM Mobile App Revamp",
+               "Refonte de l’application mobile TBM",
                [
-                   Developed a backend-for-frontend and its associated infrastructure for an app with 500k monthly active users. Integrated and managed connections to 15+ external dependencies in a high-load infrastructure context.
+                   Développement et déploiement d'un Backend-for-Frontend (BFF) et de son infrastructure associée, assurant le support d'une application comptant 500 000 utilisateurs actifs mensuels. Gestion de l'intégration de plus de 15 dépendances externes dans un contexte d'infrastructure à forte charge.
                ],
                technologies: ("Kotlin", "Spring", "Terraform", "Azure", "Redis"),
             ),
             project(
-               "Development and Maintenance of Cleo and Physio.me Applications (Biogen)",
+               "Développement et maintenance des applications Cleo et Physio.me (Biogen)",
                [
-                   Web and mobile applications deployed in 10+ countries, with cloud infrastructures across multiple AWS regions, within an HDS-compliant environment.
+                   Déploiement d'applications web et mobiles dans plus de 10 pays, avec des infrastructures Cloud multi-régions (AWS) opérant dans un environnement conforme HDS
                ],
                technologies: ("Kotlin", "Spring", "Terraform", "AWS", "React", "React Native"),
             ),
             project(
-               "Mobility Assistant",
+               "Assistant Mobilité",
                [
-                    Developed a mobility chatbot leveraging public transportation data (GTFS, GTFS-RT).
-                    Designed a multi-agent LLM architecture with real-time streaming to a mobile application.
+                    Création d’un chatbot de mobilité utilisant des données au format GTFS/GTFS-RT, et architecture multi-agents LLM avec streaming temps réel vers une application mobile.
                ],
                technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "Azure", "SSE"),
             ),
             project(
-               "Local Urban development Plan Assistant (PLU)",
+               "Assistant Plan Local d'Urbanisme (PLU)",
                [
-                    Built an LLM-powered agent capable of answering questions about the Bordeaux Metropole urban plan (PLU) with clear, sourced responses.
-                    Implemented RAG pipeline, to provide grounded answers, and real-time streaming to a web interface.
+                    Conception et développement d'un agent LLM capable de répondre aux questions sur le Plan Local d'Urbanisme (PLU) de Bordeaux Métropole, en fournissant des réponses claires et sourcées. Mise en œuvre d'un pipeline RAG pour garantir des réponses factuelles, avec intégration du streaming en temps réel vers l'interface web.
                ],
                technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "Azure", "Scaleway", "SSE"),
             ),
             project(
-               "Tailored Travel Experience Assistant",
+               "Assistant de création d'expériences de voyage personnalisées",
                [
-                    Developed an LLM agent for creating personalized travel experiences in the luxury hospitality sector.
-                    Agent with integrated tools for searching experiences and availability, with real-time streaming to web and mobile applications.
+                    Conception et développement d’un agent LLM pour la création d’expériences de voyage personnalisées dans le secteur de l’hôtellerie de luxe.
+                    Agent doté d’outils intégrés pour la recherche d’expériences et de disponibilités, avec streaming en temps réel vers des applications web et mobiles.
                ],
                technologies: ("Python", "FastAPI", "LangGraph", "Terraform", "AWS", "OpenSearch", "SSE"),
             ),
@@ -201,8 +198,8 @@
         theme: (
             space-above: 20pt,
         ),
-        timeframe: "February 2021 - August 2021",
-        title: "Artificial Intelligence Intern",
+        timeframe: "Février 2021 - Août 2021",
+        title: "Stagiaire en Intelligence Artificielle",
         organization: "BeTomorrow",
         location: "Bordeaux, France",
         {
@@ -210,24 +207,25 @@
                 dir: ttb,
                 spacing: inter-project-spacing,
                 project(
-                   "Automatic Sleep Apnea Detection",
+                   "Détection automatique de l'apnée du sommeil",
                    [
-                       Full-stack development of a mobile application using machine learning algorithms to determine whether a person suffers from sleep apnea based on a facial photo.
+                       Développement fullstack d’une application mobile utilisant des algorithmes d’apprentissage automatique pour déterminer si une personne souffre d’apnée du sommeil à partir d’une photo de son visage.
                    ],
                    technologies: ("Python", "Tensorflow", "Scikit Learn", "React Native", "AWS"),
                 ),
                 project(
-                    "AI-Powered Content Recommendation",
+
+                    "Recommendation de contenu par IA",
                     [
-                        Full-stack development of a mobile application enabling users to interact with video content and receive personalized recommendations based on their interactions.
-                        Authored a series of articles on the topic, available on #link("https://medium.com/betomorrow")[Médium].
+                        Développement fullstack d’une application mobile permettant aux utilisateurs d’interagir avec du contenu vidéo et de recevoir des recommandations personnalisées basées sur leurs interactions.
+                        Rédaction d’une série d’articles sur le sujet, disponibles sur #link("https://medium.com/betomorrow")[Médium].
                     ],
                     technologies: ("Python", "AWS", "Flutter")
                 ),
                 project(
-                    "Mobile Outdoor Augmented-Reality",
+                    "Réalité augmentée en extérieur intégrée sur mobile",
                     [
-                        Developed a native Android application to experiment with live tracking and labeling of outdoor structures (buildings, trees, etc.) through the device camera, aimed at enhancing tourism experiences.
+                        Développement d’une application Android native visant à expérimenter le suivi et l’étiquetage en temps réel des structures extérieures (bâtiments, arbres, etc.) via la caméra de l’appareil, dans le but d’enrichir l’expérience touristique.
                     ],
                     technologies: ("Python", "Kotlin", "Android")
                 )
@@ -241,21 +239,22 @@
   theme: (
     space-above: 20pt,
   ),
-  "Education",
+  "Formation",
   grid(
     columns: 2,
     column-gutter: default-theme.margin,
     education-entry(
-      title: "Prep school",
+
+      title: "Classe préparatoire",
       institution: "La Prépa des INP, Bordeaux, France",
       timeframe: "2016 - 2018",
-      [In-depth maths, physics, chemistry, etc.],
+      [Approfondissement en mathématiques, physique, chimie, etc.],
     ),
     education-entry(
       title: "Ingénieur en informatique",
       institution: "ENSEIRB-MATMECA, Bordeaux, France",
       timeframe: "2018 - 2021",
-      [Specialized in Artificial Intelligence.],
+      [Spécialisé en Intelligence Artificielle.],
     ),
   ),
 )
