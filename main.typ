@@ -21,27 +21,24 @@
         set image(width: 8pt)
         stack(
             dir: ttb,
-            spacing: 6pt,
+            spacing: inter-skill-spacing,
             contact-entry(
             email-icon,
             link("mailto:jchataigner.pro@gmail.com", "jchataigner.pro@gmail.com"),
             ),
-            line(stroke: 0.1pt, length: 100%),
             contact-entry(
               phone-icon,
               link("tel:+33 7 86 38 35 69", "+33 7 86 38 35 69"),
             ),
-            line(stroke: 0.1pt, length: 100%),
             contact-entry(
               github-icon,
               link("https://github.com/JohanChataigne", "JohanChataigne"),
             ),
-            line(stroke: 0.1pt, length: 100%),
+
             contact-entry(
               linkedin-icon,
               link("https://www.linkedin.com/in/johan-chataigner-b9970a151", "Johan Chataigner"),
             ),
-            line(stroke: 0.1pt, length: 100%),
             contact-entry(
                 location-icon,
                 "3 chemin de Jean d'Arsac,\nLe Taillan-Médoc (33320)",
@@ -56,62 +53,30 @@
         ),
       "Technical Skills",
       {
-        subsection(
-            "Languages & Frameworks",
-            10pt,
-            5pt,
-            {
-                stack(
-                    dir: ttb,
-                    spacing: inter-soft-skill-spacing,
-                    skill-entry(
-                    "Kotlin",
-                    90%,
-                    ),
-                    skill-entry(
-                    "Terraform",
-                    90%,
-                    ),
-                    skill-entry(
-                    "Python",
-                    85%,
-                    ),
-                    skill-entry(
-                    "Spring",
-                    80%,
-                    ),
-                    skill-entry(
-                    "TypeScript",
-                    60%,
-                    ),
-                )
-            }
-        )
-
-        subsection(
-            "Cloud certifications",
-            10pt,
-            0pt,
-            {
-                set image(width: 8pt)
-                stack(
-                    dir: ttb,
-                    spacing: inter-soft-skill-spacing,
-                    stack(
-                        dir: ltr,
-                        spacing: 4pt,
-                        link("https://learn.microsoft.com/api/credentials/share/en-us/JohanChataigner-4686/68E0B40A282F5A00?sharingId=34DC214C8A2B6B04")[Microsoft Azure Fundamentals],
-                        certified-icon,
-                    ),
-                    stack(
-                        dir: ltr,
-                        spacing: 4pt,
-                        link("https://catalog-education.oracle.com/pls/certview/sharebadge?id=3DD9CEF71434FDB0D50EB397B2E04A228CA45A834A4E5005511CC1455997FDE8")[OCI Certified AI Foundations Associate],
-                        certified-icon,
-                    ),
-                )
-            }
-        )
+            stack(
+                dir: ttb,
+                spacing: inter-skill-spacing,
+                skill-entry(
+                    "Backend & APIs",
+                    keywords: ("Kotlin Spring", "Python FastAPI"),
+                ),
+                skill-entry(
+                    "Cloud Platforms",
+                    keywords: ("Azure", "AWS", "Scaleway"),
+                ),
+                skill-entry(
+                    "DevOps",
+                    keywords: ("Terraform", "Gitlab", "Azure DevOps"),
+                ),
+                skill-entry(
+                    "GenAI",
+                    keywords: ("LangChain", "LangGraph", "RAG"),
+                ),
+                skill-entry(
+                    "LLMOps",
+                    keywords: ("Langfuse", "Opik"),
+                ),
+            )
       }
     )
 
@@ -119,37 +84,56 @@
         theme: (
           space-above: 10pt,
         ),
-      "Soft Skills",
+      "Certifications",
       {
-
-        subsection(
-            "Languages",
-            10pt,
-            5pt,
-            {
+            set image(width: 8pt)
+            stack(
+                dir: ttb,
+                spacing: inter-skill-spacing,
                 stack(
-                    spacing: inter-soft-skill-spacing,
-                    soft-skill-entry("French", level: "Native"),
-                    soft-skill-entry("English", level: "TOEIC 975 pts"),
-                    soft-skill-entry("Spanish", level: "B2 level"),
-                )
-            }
-        )
-
-        subsection(
-            "Hobbies",
-            10pt,
-            0pt,
-            {
+                    dir: ltr,
+                    spacing: 4pt,
+                    link("https://learn.microsoft.com/api/credentials/share/en-us/JohanChataigner-4686/68E0B40A282F5A00?sharingId=34DC214C8A2B6B04")[Microsoft Azure Fundamentals],
+                    certified-icon,
+                ),
                 stack(
-                  spacing: inter-soft-skill-spacing,
-                  soft-skill-entry("Competitive volleyball", level: "Pré-Nationale"),
-                  soft-skill-entry("Running"),
-                  soft-skill-entry("Video games"),
-                )
-            }
-        )
-      },
+                    dir: ltr,
+                    spacing: 4pt,
+                    link("https://catalog-education.oracle.com/pls/certview/sharebadge?id=3DD9CEF71434FDB0D50EB397B2E04A228CA45A834A4E5005511CC1455997FDE8")[OCI Certified AI Foundations Associate],
+                    certified-icon,
+                ),
+            )
+        }
+    )
+
+    section(
+        theme: (
+          space-above: 10pt,
+        ),
+      "Languages",
+      {
+            stack(
+                spacing: inter-skill-spacing,
+                soft-skill-entry("French", level: "Native"),
+                soft-skill-entry("English", level: "TOEIC 975 pts"),
+                soft-skill-entry("Spanish", level: "B2 level"),
+            )
+        }
+    )
+
+    section(
+        theme: (
+          space-above: 10pt,
+        ),
+      "Hobbies",
+      {
+            stack(
+                spacing: inter-skill-spacing,
+                soft-skill-entry("Competitive volleyball", level: "Pré-Nationale"),
+                soft-skill-entry("Running"),
+                soft-skill-entry("Video games"),
+            )
+        }
     )
   },
 )
@@ -175,7 +159,7 @@
             project(
                "TBM Mobile App Revamp",
                [
-                   Developed a backend-for-frontend and its associated infrastructure for an app with 10k+ monthly active users. Integrated and managed connections to 15+ external dependencies in a high-load infrastructure context.
+                   Developed a backend-for-frontend and its associated infrastructure for an app with 500k monthly active users. Integrated and managed connections to 15+ external dependencies in a high-load infrastructure context.
                ],
                technologies: ("Kotlin", "Spring", "Terraform", "Azure", "Redis"),
             ),

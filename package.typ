@@ -8,8 +8,8 @@
   color-primary: rgb("#000000"),
   color-secondary: rgb("#475d6a"),
   gutter-size: 4em,
-  main-width: 6fr,
-  aside-width: 3fr,
+  main-width: 5.9fr,
+  aside-width: 3.1fr,
   profile-picture-width: 70%,
   tag-font-color: white,
   tag-font-size: 6pt,
@@ -189,7 +189,7 @@
   )
 }
 
-#let inter-soft-skill-spacing = 6pt
+#let inter-skill-spacing = 7pt
 
 #let soft-skill-entry(
   skill,
@@ -201,7 +201,14 @@
   set text(size: theme.font-size) if "font-size" in theme
 
     if level != "" {
-        skill + " - " + text(style: "italic", level)
+        stack(
+            dir: ltr,
+            skill,
+            {
+                set align(ltr.end())
+                level
+            }
+        )
     } else {
         skill
     }
@@ -378,11 +385,11 @@
 #let skill-entry(
     theme: (),
     title,
-    progress,
+    keywords: (),
 ) = {
 
     set text(font: default-theme.font) if "font" in default-theme
-    title + h(1fr) + box(progressbar(theme: theme, progress: progress), width: 40%)
+    strong(title, delta: 150) + ": " + keywords.join(", ")
 }
 
 #let education-entry(
